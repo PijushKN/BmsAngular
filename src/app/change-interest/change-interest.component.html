@@ -1,0 +1,31 @@
+<div class="container col-sm-8 mt-4 mb-5 mr-5">
+  <div class="alert alert-success" *ngIf="onSuccessLabel"><strong>Rate change Succesful!</strong></div>
+  <div class="container " id="content">
+    <div class="container col-sm-9">
+      <h3>Change Interest Rates</h3>
+      <form #changeInterestRateForm="ngForm"
+        (ngSubmit)="!changeInterestRateForm.invalid && onSubmit(changeInterestRateForm)">
+        <div class="form-group">
+          <label for="interestName" class="mt-4 mr-2">Interest Type :</label>
+          <select class=" form-control form-select mt-4" aria-label="Default select example" name="plan" id="plan"
+            required [(ngModel)]="interestPlanObj.plan">
+            <option selected>Select Interest Type</option>
+            <option *ngFor="let planobj of interestPlan">{{planobj.plan}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for='interestRate' class="mt-2 mr-2">Enter new Interest Rate:</label>
+          <input type="number" id="rate" name="rate" class="form-control mt-2" [(ngModel)]="interestPlanObj.rate" required
+            placeholder="Give new Interest Rate" min="1" max="99" #rate="ngModel">
+        </div>
+        <div class="alert alert-warning" *ngIf="rate.dirty && rate.invalid">
+          Give Proper Rate.
+        </div>
+        <button class="btn btn-primary m-3" type="submit" [disabled]="!changeInterestRateForm.valid">Submit</button>
+        <button class="btn btn-secondary" type="reset" (click)="onClickReset()">Reset</button>
+        
+
+      </form>
+
+    </div>
+  </div>

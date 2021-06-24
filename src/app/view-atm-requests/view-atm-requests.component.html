@@ -1,0 +1,26 @@
+<div class="container col-sm-8 mt-4 mb-5 mr-5">
+    <h3>Pending ATM Requests</h3>
+    <div class="alert alert-success" *ngIf="alertFlag"><strong>{{successLabel}}</strong></div>
+    <table class="table table-responsive-sm w-auto table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Account Number(Debit Card Requested)</th>
+
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let debitCardRequest of debitCardRequestList">
+
+                <td scope="row" id="data"><a [routerLink]="['/view-account', debitCardRequest.accountNo]">{{debitCardRequest.accountNo}}</a>
+                </td>
+                <td><button class="btn btn-primary">Grant Debit Card</button>
+                </td>
+                <td><button class="btn btn-danger" (click)="onClickRejectDebitCard(debitCardRequest)">Reject Debit Card
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
