@@ -1,35 +1,47 @@
 <div class="container-fluid col-sm-8 mr-5">
-    <div class="alert alert-warning" *ngIf="errorMessage">{{errorMessage}}</div>
-    <div class="row" >
-        <div class="col-sm-10"><h3>List of Branches</h3></div>
-        <div class ="col "><button class="btn btn-primary" (click)="addNewBranch()">Add Branch</button></div>
-    </div>
-    
-    <div class="container mb-5">
-        
-        <table class="table">
-            <thead>
+    <div *ngIf="branches.length>0;then branchesList else noRecord"></div>
+    <ng-template #branchesList>
+        <div class="alert alert-warning" *ngIf="errorMessage">{{errorMessage}}</div>
+        <div class="row">
+            <div class="col-sm-10">
+                <h3>List of Branches</h3>
+            </div>
+            <div class="col "><button class="btn btn-primary" (click)="addNewBranch()">Add Branch</button></div>
+        </div>
 
-                <tr>
-                    <th>IFSC Code</th>
-                    <th>Branch Name</th>
-                    <th>Address</th>
-                    <th>Pin Code</th>
-                    <th>Branch Fund</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let branch of branches">
-                    <td>{{branch.ifscCode}}</td>
-                    <td>{{branch.branchName}}</td>
-                    <td>{{branch.address}}</td>
-                    <td>{{branch.pincode}}</td>
-                    <td>{{branch.branchFund}}</td>
-                    <td><button class="btn btn-primary" (click)="depositToBranch(branch.ifscCode)">Add To Branch
-                            Fund</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <div class="container mb-5">
+
+            <table class="table">
+                <thead>
+
+                    <tr>
+                        <th>IFSC Code</th>
+                        <th>Branch Name</th>
+                        <th>Address</th>
+                        <th>Pin Code</th>
+                        <th>Branch Fund</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let branch of branches">
+                        <td>{{branch.ifscCode}}</td>
+                        <td>{{branch.branchName}}</td>
+                        <td>{{branch.address}}</td>
+                        <td>{{branch.pincode}}</td>
+                        <td>{{branch.branchFund}}</td>
+                        <td><button class="btn btn-primary" (click)="depositToBranch(branch.ifscCode)">Add To Branch
+                                Fund</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </ng-template>
+    <ng-template #noRecord>
+        <div class="alert alert-danger"><strong>No Records Available!!!</strong></div>
+    </ng-template>
+    <ng-template #noRecord>
+        <div class="alert alert-danger"><strong>No Records Available!!!</strong></div>
+    </ng-template>
+
 </div>
