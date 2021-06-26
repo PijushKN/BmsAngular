@@ -21,6 +21,9 @@ import { ViewAllApprovedLoansComponent } from './view-all-approved-loans/view-al
 import { ViewPendingLoanRequestComponent } from './view-pending-loan-request/view-pending-loan-request.component';
 import { ViewInterestPlansComponent } from './view-interest-plans/view-interest-plans.component';
 import { ViewAtmRequestsComponent } from './view-atm-requests/view-atm-requests.component';
+import { AtmHomepageComponent } from './atm-homepage/atm-homepage.component';
+import { AtmWithdrawComponent } from './atm-withdraw/atm-withdraw.component';
+import { AtmCheckBalanceComponent } from './atm-check-balance/atm-check-balance.component';
 
 
 @NgModule({
@@ -43,6 +46,9 @@ import { ViewAtmRequestsComponent } from './view-atm-requests/view-atm-requests.
     ViewPendingLoanRequestComponent,
     ViewInterestPlansComponent,
     ViewAtmRequestsComponent,
+    AtmHomepageComponent,
+    AtmWithdrawComponent,
+    AtmCheckBalanceComponent
     
    ],
   imports: [

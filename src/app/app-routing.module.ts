@@ -13,59 +13,71 @@ import { ChangeInterestComponent } from './change-interest/change-interest.compo
 import { ViewAccountComponent } from './view-account/view-account.component';
 import { ViewAllApprovedLoansComponent } from './view-all-approved-loans/view-all-approved-loans.component';
 import { ViewAtmRequestsComponent } from './view-atm-requests/view-atm-requests.component';
+import { AtmHomepageComponent } from './atm-homepage/atm-homepage.component';
+import { AtmWithdrawComponent } from './atm-withdraw/atm-withdraw.component';
+import { AtmCheckBalanceComponent } from './atm-check-balance/atm-check-balance.component';
 
 const routes: Routes = [
   {
     //Default page
-    path:'',component:AdminDashboardComponent
+    path: '', component: AdminDashboardComponent
   },
   {
     // To get the list of all the customers.
-    path:'viewCustomer',component:CustomerComponent
+    path: 'viewCustomer', component: CustomerComponent
   },
   {
     //To get the list of all the branches of this bank.
-    path:'listBranches',component:ListBranchesComponent
+    path: 'listBranches', component: ListBranchesComponent
   },
   {
     //To get the list of all the transactions that have occurred
-    path:'allTransactions',component:TransactionComponent
+    path: 'allTransactions', component: TransactionComponent
   },
   {
     //To add a new branch
-    path:'branchManipulations',component:BranchComponent
+    path: 'branchManipulations', component: BranchComponent
   },
-  { 
+  {
     //To change the interest rate
-    path: 'change-interest', component: ChangeInterestComponent 
+    path: 'change-interest', component: ChangeInterestComponent
   },
   {
     //To add to branch funds
-    path:'depositToBranchFunds/:ifscCode',component:DepositToBranchFundsComponent
+    path: 'depositToBranchFunds/:ifscCode', component: DepositToBranchFundsComponent
   },
-  { 
+  {
     // To view all the loan requests that are yet to be approved
     path: 'view-pending-loan-request', component: ViewPendingLoanRequestComponent
   },
-  { 
+  {
     path: 'view-account/:accountNo', component: ViewAccountComponent
   },
-  { 
+  {
     //To view the list of approved loans
-    path: 'view-all-approved-loans', component: ViewAllApprovedLoansComponent 
+    path: 'view-all-approved-loans', component: ViewAllApprovedLoansComponent
   },
   {
-    path:'view-interest-plans',component:ViewInterestPlansComponent
+    path: 'view-interest-plans', component: ViewInterestPlansComponent
   },
   {
     //To view all pending atm requests
-    path:'view-atm-requests',component:ViewAtmRequestsComponent
+    path: 'view-atm-requests', component: ViewAtmRequestsComponent
+  },
+  {
+    path: 'atm-homepage', component: AtmHomepageComponent
+  },
+  {
+    path: "atm-withdraw", component: AtmWithdrawComponent
+  },
+  {
+    path: "atm-check-balance", component: AtmCheckBalanceComponent
   },
   {
     //Page to occur in case of an invalid url
-    path:'**',component:ErrorpageComponent
+    path: '**', component: ErrorpageComponent
   }
-  
+
 ];
 
 @NgModule({
