@@ -16,6 +16,7 @@ import { ViewAtmRequestsComponent } from './view-atm-requests/view-atm-requests.
 import { AtmHomepageComponent } from './atm-homepage/atm-homepage.component';
 import { AtmWithdrawComponent } from './atm-withdraw/atm-withdraw.component';
 import { AtmCheckBalanceComponent } from './atm-check-balance/atm-check-balance.component';
+import { CustomerSignupComponent } from './customer-signup/customer-signup.component';
 
 const routes: Routes = [
   {
@@ -72,6 +73,9 @@ const routes: Routes = [
   },
   {
     path: "atm-check-balance", component: AtmCheckBalanceComponent
+  },
+  {
+    path:'customer-signup',component:CustomerSignupComponent
   },
   {
     //Page to occur in case of an invalid url

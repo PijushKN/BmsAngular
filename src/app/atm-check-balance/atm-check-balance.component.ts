@@ -23,7 +23,8 @@ export class AtmCheckBalanceComponent implements OnInit {
     this.atmService.checkBalanceUsingATM(this.debitCard).subscribe(
       response => {
         const res =JSON.stringify(response); 
-        console.log(response);
+        const jsonResponse = JSON.parse(res);
+        console.log(jsonResponse.status);
         swal("Your Account Balance is", res);
         this.router.navigate(['atm-homepage']);
       },

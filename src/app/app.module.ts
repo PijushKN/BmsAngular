@@ -24,6 +24,7 @@ import { ViewAtmRequestsComponent } from './view-atm-requests/view-atm-requests.
 import { AtmHomepageComponent } from './atm-homepage/atm-homepage.component';
 import { AtmWithdrawComponent } from './atm-withdraw/atm-withdraw.component';
 import { AtmCheckBalanceComponent } from './atm-check-balance/atm-check-balance.component';
+import { CustomerSignupComponent } from './customer-signup/customer-signup.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { AtmCheckBalanceComponent } from './atm-check-balance/atm-check-balance.
     ViewAtmRequestsComponent,
     AtmHomepageComponent,
     AtmWithdrawComponent,
-    AtmCheckBalanceComponent
+    AtmCheckBalanceComponent,
+    CustomerSignupComponent,
     
    ],
   imports: [
