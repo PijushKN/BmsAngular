@@ -24,8 +24,8 @@ export class AtmCheckBalanceComponent implements OnInit {
       response => {
         const res =JSON.stringify(response); 
         const jsonResponse = JSON.parse(res);
-        console.log(jsonResponse.status);
-        swal("Your Account Balance is", res);
+        console.log(jsonResponse.data);
+        swal(jsonResponse.message, "RS."+JSON.stringify(jsonResponse.data));
         this.router.navigate(['atm-homepage']);
       },
       error => {
